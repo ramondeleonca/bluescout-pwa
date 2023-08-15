@@ -1,0 +1,99 @@
+@use "easings.scss" as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg {
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    left: 90px;
+    z-index: -10;
+    position: fixed;
+    background-image: url("/bg.svg");
+    background-size: cover;
+    background-position: center right;
+    transform-origin: center right;
+    transition: transform 0.5s $out-cubic, opacity 1s;
+
+    &::after {
+        content: "";
+        width: 100vw;
+        height: 100vh;
+        top: 0px;
+        left: 100vw;
+        z-index: 5;
+        position: absolute;
+        background-color: white;
+    }
+
+    // &.loader::before {
+    //     content: "";
+    //     @apply w-14;
+    //     @apply h-14;
+    //     z-index: 10;
+    //     position: absolute;
+    //     background-image: url("/loader.png");
+    //     top: calc(50vw - calc(3.5rem / 2));
+    //     left: calc(50vh - calc(3.5rem / 2));
+    //     animation: loader 1s linear infinite;
+    //     transform-origin: center;
+    // }
+
+    &.unloaded {
+        transform: scale(2);
+        opacity: 1;
+    }
+
+    &.out {
+        z-index: 1000;
+        transform: scale(2.5) translateX(-100vw);
+        opacity: 1 !important;
+        transition: transform 1s $in-out-cubic, opacity 1s;
+    }
+
+    &.faded {
+        opacity: 0.5;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .bg {
+        transform: translateX(10%);
+    }
+
+    .bar {
+        top: 50px !important;
+    }
+}
+
+a {
+    background-image: linear-gradient(black, black);
+    background-size: 0% 1px;
+    background-position: bottom left;
+    background-repeat: no-repeat;
+    transition: background-size 0.25s $out-cubic;
+
+    &:hover {
+        background-size: 100% 1px;    
+    }
+}
+
+@keyframes loader {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.MuiTabPanel-root {
+    padding: 0px !important;
+}
+
+// * {
+//     outline: 1px solid red;
+// }

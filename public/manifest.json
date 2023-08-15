@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json.schemastore.org/web-manifest",
+  "short_name": "BlueScout",
+  "name": "BlueScout",
+  "description": "BlueScout: The All-In-One scouting solution for team 3526",
+  "scope": "/",
+  "id": "com.blueignition.bluescout",
+  "lang": "en-us",
+  "icons": [
+    {
+      "src": "Ignito-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
+      "src": "Ignito-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "Ignito-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "Ignito-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "Ignito-1024x1024.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "background_color": "#FFFFFF",
+  "theme_color": "#1565c0",
+  "start_url": "/?utm_source=pwa",
+  "display": "standalone",
+  "orientation": "any"
+}
