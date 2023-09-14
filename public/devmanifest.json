@@ -37,11 +37,5 @@
     "theme_color": "#1565c0",
     "start_url": "/?utm_source=pwa&dev=true",
     "display": "standalone",
-    "orientation": "any",
-    "protocol_handlers": [
-      {
-        "protocol": "bluescout-qr",
-        "url": "/protocols/bluescout-qr/?type=%s"
-      }
-    ]
+    "orientation": "any"
   }

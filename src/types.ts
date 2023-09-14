@@ -29,3 +29,40 @@ export const sensorsDictionary = <const>{
     "other": "Otro"
 }
 export type Sensor = keyof typeof sensorsDictionary;
+
+export interface Match {
+    team_number: number;
+    match_number: number;
+
+    cube_a_t: number;
+    cube_a_m: number;
+    cube_a_b: number;
+
+    cone_a_t: number;
+    cone_a_m: number;
+    cone_a_b: number;
+
+    cube_t_t: number;
+    cube_t_m: number;
+    cube_t_b: number;
+
+    cone_t_t: number;
+    cone_t_m: number;
+    cone_t_b: number;
+
+    auto_charge_att: number;
+    auto_charge_lvl: number;
+
+    tele_charge_att: number;
+    tele_charge_lvl: number;
+
+    intake_top: number;
+    intake_mid: number;
+    intake_bottom: number;
+    intake_ground: number;
+
+    intake_single: number;
+    intake_double: number;
+
+    stopped_sec: number;
+}

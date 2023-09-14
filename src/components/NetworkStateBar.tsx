@@ -1,7 +1,13 @@
 import useLoaded from "@/hooks/useLoaded";
+import SignalWifi1Bar from "@mui/icons-material/SignalWifi1Bar";
+import SignalWifi2Bar from "@mui/icons-material/SignalWifi2Bar";
+import SignalWifi3Bar from "@mui/icons-material/SignalWifi3Bar";
+import SignalWifi4Bar from "@mui/icons-material/SignalWifi4Bar";
+import SignalWifiOff from "@mui/icons-material/SignalWifiOff";
+import WifiLock from "@mui/icons-material/WifiLock";
 import { inRange } from "@/utils";
-import { SignalWifi1Bar, SignalWifi2Bar, SignalWifiOff, SignalWifi3Bar, WifiLock, SignalWifi4Bar } from "@mui/icons-material";
 import { useNetworkState } from "react-use";
+
 
 const NetworkStateBar = () => {
     let loaded = useLoaded();

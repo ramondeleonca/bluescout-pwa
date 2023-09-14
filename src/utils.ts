@@ -27,3 +27,8 @@ export const convertToDbUnit = (val: number, unit: LengthUnit | WeightUnit) => {
             return val;
     }
 }
+
+export const parseNum = (val: any) => {
+    const parsed = Number(typeof val === "string" ? val.replace(/\D/g, "") : val);
+    return isNaN(parsed) ? undefined : parsed;
+}

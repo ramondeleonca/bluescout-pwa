@@ -94,6 +94,10 @@ a {
     padding: 0px !important;
 }
 
+.MuiInputBase-root {
+    @apply m-2;
+}
+
 // * {
 //     outline: 1px solid red;
 // }

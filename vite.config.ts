@@ -10,7 +10,7 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      devOptions: { enabled: true },
+      // devOptions: { enabled: true },
       manifest: JSON.parse(fs.readFileSync(process.env.NODE_ENV === "production" ? './public/manifest.json' : "./public/devmanifest.json", 'utf8'))
     })
   ],
@@ -19,4 +19,14 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src')
     }
   },
+  build: {
+    rollupOptions: {
+      onwarn(warning, warn) {
+        if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
+          return
+        }
+        warn(warning)
+      }
+    }
+  }
 })

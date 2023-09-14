@@ -1,15 +1,20 @@
-import { TabContext, TabList, TabPanel } from "@mui/lab";
+import TabContext from "@mui/lab/TabContext";
 import MatchPanel from "./panels/MatchPanel";
-import { Tab } from "@mui/material";
-import Background from "./components/Background";
+import Tab from "@mui/material/Tab";
+import Background from "./../components/Background";
 import RobotPanel from "./panels/RobotPanel";
-import useLoaded from "./hooks/useLoaded";
-import { Suspense, useState } from "react";
+import useLoaded from "./../hooks/useLoaded";
+import { Suspense, useEffect, useState } from "react";
 import LoadingPanel from "./panels/LoadingPanel";
+import useUrl from "@/hooks/useUrl";
+import TabList from "@mui/lab/TabList";
+import TabPanel from "@mui/lab/TabPanel";
 
 export default function App() {
 	const loaded = useLoaded();
-	const [tab, setTab] = useState("match");
+	const url = useUrl();
+	const [tab, setTab] = useState(url.searchParams.get("tab") ?? "match");
+	useEffect(() => window.history.pushState(null, "", `?tab=${tab}`), [tab]);
 
 	return (
 		<>
