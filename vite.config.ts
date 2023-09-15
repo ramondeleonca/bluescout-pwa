@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react'
 import { VitePWA } from 'vite-plugin-pwa'
 import path from 'path'
 import fs from 'fs'
+import { globSync } from "glob"
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,7 +12,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       // devOptions: { enabled: true },
-      manifest: JSON.parse(fs.readFileSync(process.env.NODE_ENV === "production" ? './public/manifest.json' : "./public/devmanifest.json", 'utf8'))
+      manifest: JSON.parse(fs.readFileSync(process.env.NODE_ENV === "production" ? './public/manifest.json' : "./public/devmanifest.json", 'utf8')),
+      includeAssets: globSync("public/assets/**/*")
     })
   ],
   resolve: {
