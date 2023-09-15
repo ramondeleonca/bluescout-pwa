@@ -13,7 +13,7 @@ export default defineConfig({
       registerType: 'autoUpdate',
       // devOptions: { enabled: true },
       manifest: JSON.parse(fs.readFileSync(process.env.NODE_ENV === "production" ? './public/manifest.json' : "./public/devmanifest.json", 'utf8')),
-      includeAssets: globSync("public/assets/**/*")
+      includeAssets: globSync("public/**")
     })
   ],
   resolve: {
