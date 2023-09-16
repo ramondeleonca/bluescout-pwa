@@ -352,7 +352,7 @@ export default function MatchPanel() {
                 </form>
 
 
-                <div className="aspect-square w-1/6">
+                <div className="aspect-square w-80 my-10">
                     <AwesomeQRCode options={{...QR_OPTIONS, text: qrCodeText }}></AwesomeQRCode>
                 </div>
             </div>
